@@ -18,7 +18,7 @@ namespace kelp_eater
         [SerializeField] private float timerMaximunRange;
         [SerializeField] private float timerDecreaseAmount;
 
-        [SerializeField] float moveInterval = 0.6f; // Intervalo entre movimientos
+        public float eatInterval = 0.6f; // Intervalo entre movimientos
 
         ScoreCounter scoreScript;
 
@@ -111,7 +111,7 @@ namespace kelp_eater
                         break;
                 }
 
-                yield return new WaitForSeconds(moveInterval);
+                yield return new WaitForSeconds(eatInterval);
             }
         }
 

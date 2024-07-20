@@ -5,8 +5,8 @@ namespace kelp_eater
 {
     public class ScoreCounter : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI scoreText;  
-
+        [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private float moreEatSpeed;
         private float elapsedTime; 
         public int score;        
         private const int pointsPerMinute = 45;
@@ -43,8 +43,9 @@ namespace kelp_eater
             }
 
             //Aumenta la velocidad de las algas cuando el puntaje llega a un multiplo de 10.
-            if (score % 10 == 0 && score > 0 && hasDecreasedTimer == false)
+            if (score % 20 == 0 && score > 0 && hasDecreasedTimer == false)
             {
+                kelpSystemScript.eatInterval -= moreEatSpeed;
                 kelpSystemScript.DecreaseTimerRange();
                 hasDecreasedTimer = true;
             }
