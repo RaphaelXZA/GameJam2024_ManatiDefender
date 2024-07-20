@@ -21,11 +21,6 @@ namespace kelp_eater
         [SerializeField] private AudioSource soundAudioSource;
         [SerializeField] private List<SoundList> soundList;
 
-        // Nuevo AudioSource y lista de di�logos
-        [Header("----------------------Dialogue Settings----------------------")]
-        [SerializeField] private AudioSource dialogueAudioSource;
-        [SerializeField] private List<SoundList> dialogueList;
-
         private static SoundManager instance;
 
         private void Awake()
@@ -69,34 +64,67 @@ namespace kelp_eater
         //MUSICA
         public static void PlayMusic(int trackNum) //Reproduce musica. 
         {
-            Debug.Log("Musica nueva reproducida");
-            instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
-            instance.musicAudioSource.Play();
+            if (instance.musicAudioSource.clip != null)
+            {
+                Debug.Log("Musica nueva reproducida");
+                instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
+                instance.musicAudioSource.Play();
+            }
+            else
+            {
+                Debug.Log("No hay ningun clip de musica asignado al indice en el Sound Manager");
+            }
+            
+
         }
 
         public static void PlayMusicOnLoop(int trackNum) //Reproduce musica en bucle.
         {
-            Debug.Log("Musica nueva reproducida");
-            instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
-            instance.musicAudioSource.loop = true;
-            instance.musicAudioSource.Play();
+            if (instance.musicAudioSource.clip != null)
+            {
+                Debug.Log("Musica nueva reproducida");
+                instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
+                instance.musicAudioSource.loop = true;
+                instance.musicAudioSource.Play();
+            }
+            else
+            {
+                Debug.Log("No hay ningun clip de musica asignado al indice en el Sound Manager");
+            }
+
         }
 
         public static void PlayMusicCropped(int trackNum, float startAudioTime) //Reproduce musica con cierto retraso de segundos.
         {
-            Debug.Log("Musica nueva reproducida");
-            instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
-            instance.musicAudioSource.time = startAudioTime;
-            instance.musicAudioSource.Play();
+            if (instance.musicAudioSource.clip != null)
+            {
+                Debug.Log("Musica nueva reproducida");
+                instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
+                instance.musicAudioSource.time = startAudioTime;
+                instance.musicAudioSource.Play();
+            }
+            else
+            {
+                Debug.Log("No hay ningun clip de musica asignado al indice en el Sound Manager");
+            }
+
         }
 
         public static void PlayMusicOnLoopAndCropped(int trackNum, float startAudioTime) //Reproduce musica en bucle Y con cierto retraso de segundos.
         {
-            Debug.Log("Musica nueva reproducida");
-            instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
-            instance.musicAudioSource.loop = true;
-            instance.musicAudioSource.time = startAudioTime;
-            instance.musicAudioSource.Play();
+            if (instance.musicAudioSource.clip != null)
+            {
+                Debug.Log("Musica nueva reproducida");
+                instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
+                instance.musicAudioSource.loop = true;
+                instance.musicAudioSource.time = startAudioTime;
+                instance.musicAudioSource.Play();
+            }
+            else
+            {
+                Debug.Log("No hay ningun clip de musica asignado al indice en el Sound Manager");
+            }
+
         }
 
 
@@ -147,7 +175,6 @@ namespace kelp_eater
         public SoundType soundType;
         public AudioClip[] Sounds { get => sounds; }
         [SerializeField] public AudioClip[] sounds;
-        [SerializeField] public string[] soundNames;
     }
 
 }
