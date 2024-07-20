@@ -7,9 +7,9 @@ namespace kelp_eater
     public class PlayMusic : MonoBehaviour
     {
         public int MusicTrackNumber; //Indice de la pista de musica a reproducir
-        public float startMusicTime; //Recorta el tiempo en el que inicia el clip
         public bool playMusicOnLoop = false; //Bool para reproducir musica en bucle
         public bool playMusicCropped = false; //Bool para reproducir musica desde un segundo en especifico
+        public float CroppedMusicTime; //Recorta el tiempo en el que inicia el clip
 
         void Start()
         {
@@ -44,7 +44,7 @@ namespace kelp_eater
 
         public void PlaySceneMainMusicOnLoopWithRetardedTime()
         {
-            SoundManager.PlayMusicOnLoopAndCropped(MusicTrackNumber, startMusicTime);
+            SoundManager.PlayMusicOnLoopAndCropped(MusicTrackNumber, CroppedMusicTime);
         }
 
         public void PlaySceneMainMusicOnLoop()
@@ -54,7 +54,7 @@ namespace kelp_eater
 
         public void PlaySceneMainMusicWithRetardedTime()
         {
-            SoundManager.PlayMusicCropped(MusicTrackNumber, startMusicTime);
+            SoundManager.PlayMusicCropped(MusicTrackNumber, CroppedMusicTime);
         }
 
     }

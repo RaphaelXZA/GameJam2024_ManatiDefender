@@ -64,67 +64,34 @@ namespace kelp_eater
         //MUSICA
         public static void PlayMusic(int trackNum) //Reproduce musica. 
         {
-            if (instance.musicAudioSource.clip != null)
-            {
-                Debug.Log("Musica nueva reproducida");
-                instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
-                instance.musicAudioSource.Play();
-            }
-            else
-            {
-                Debug.Log("No hay ningun clip de musica asignado al indice en el Sound Manager");
-            }
-            
-
+            Debug.Log("Musica nueva reproducida");
+            instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
+            instance.musicAudioSource.Play();
         }
 
         public static void PlayMusicOnLoop(int trackNum) //Reproduce musica en bucle.
         {
-            if (instance.musicAudioSource.clip != null)
-            {
-                Debug.Log("Musica nueva reproducida");
-                instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
-                instance.musicAudioSource.loop = true;
-                instance.musicAudioSource.Play();
-            }
-            else
-            {
-                Debug.Log("No hay ningun clip de musica asignado al indice en el Sound Manager");
-            }
-
+            Debug.Log("Musica nueva reproducida");
+            instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
+            instance.musicAudioSource.loop = true;
+            instance.musicAudioSource.Play();
         }
 
         public static void PlayMusicCropped(int trackNum, float startAudioTime) //Reproduce musica con cierto retraso de segundos.
         {
-            if (instance.musicAudioSource.clip != null)
-            {
-                Debug.Log("Musica nueva reproducida");
-                instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
-                instance.musicAudioSource.time = startAudioTime;
-                instance.musicAudioSource.Play();
-            }
-            else
-            {
-                Debug.Log("No hay ningun clip de musica asignado al indice en el Sound Manager");
-            }
-
+            Debug.Log("Musica nueva reproducida");
+            instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
+            instance.musicAudioSource.time = startAudioTime;
+            instance.musicAudioSource.Play();
         }
 
         public static void PlayMusicOnLoopAndCropped(int trackNum, float startAudioTime) //Reproduce musica en bucle Y con cierto retraso de segundos.
         {
-            if (instance.musicAudioSource.clip != null)
-            {
-                Debug.Log("Musica nueva reproducida");
-                instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
-                instance.musicAudioSource.loop = true;
-                instance.musicAudioSource.time = startAudioTime;
-                instance.musicAudioSource.Play();
-            }
-            else
-            {
-                Debug.Log("No hay ningun clip de musica asignado al indice en el Sound Manager");
-            }
-
+            Debug.Log("Musica nueva reproducida");
+            instance.musicAudioSource.clip = instance.musicList[trackNum].clip;
+            instance.musicAudioSource.loop = true;
+            instance.musicAudioSource.time = startAudioTime;
+            instance.musicAudioSource.Play();
         }
 
 
