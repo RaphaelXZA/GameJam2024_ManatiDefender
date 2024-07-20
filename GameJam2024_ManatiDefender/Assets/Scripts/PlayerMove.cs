@@ -9,27 +9,43 @@ public class PlayerController : MonoBehaviour
     // Sensibilidad del deslizamiento
     public float swipeThreshold = 10f;
 
+    // Variables para el manejo del deslizamiento
+    private Vector2 startTouchPosition;
+    private bool hasMoved = false;
+
     void Update()
     {
         // Verifica la entrada táctil
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            Vector2 touchDeltaPosition = touch.deltaPosition;
 
-            if (touch.phase == TouchPhase.Moved)
+            switch (touch.phase)
             {
-                if (Mathf.Abs(touchDeltaPosition.x) > swipeThreshold) // Verifica si el deslizamiento es suficiente
-                {
-                    if (touchDeltaPosition.x > 0) // Desliza hacia la derecha
+                case TouchPhase.Began:
+                    startTouchPosition = touch.position;
+                    hasMoved = false;
+                    break;
+
+                case TouchPhase.Moved:
+                    if (!hasMoved) // Asegura que solo procesamos el primer movimiento significativo
                     {
-                        MoveToNextZone(true);
+                        Vector2 touchDeltaPosition = touch.position - startTouchPosition;
+
+                        if (Mathf.Abs(touchDeltaPosition.x) > swipeThreshold) // Verifica si el deslizamiento es suficiente
+                        {
+                            if (touchDeltaPosition.x > 0) // Desliza hacia la derecha
+                            {
+                                MoveToNextZone(true);
+                            }
+                            else if (touchDeltaPosition.x < 0) // Desliza hacia la izquierda
+                            {
+                                MoveToNextZone(false);
+                            }
+                            hasMoved = true; // Marca que hemos procesado el movimiento
+                        }
                     }
-                    else if (touchDeltaPosition.x < 0) // Desliza hacia la izquierda
-                    {
-                        MoveToNextZone(false);
-                    }
-                }
+                    break;
             }
         }
     }

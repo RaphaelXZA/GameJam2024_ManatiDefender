@@ -411,7 +411,7 @@ MonoBehaviour:
   - {fileID: 1037920439}
   - {fileID: 554889530}
   - {fileID: 1092701320}
-  swipeThreshold: 10
+  swipeThreshold: 2
 --- !u!212 &1496586879
 SpriteRenderer:
   m_ObjectHideFlags: 0
