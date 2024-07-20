@@ -77,7 +77,7 @@ namespace kelp_eater
             }
 
 
-            isAnimating = true; //Desactiva deslizamientos durante la secuencia
+            isAnimating = true; 
 
             Vector3 startPosition = transform.position;
             Vector3 endPosition = zoneObjects[targetIndex].transform.position;
@@ -92,7 +92,7 @@ namespace kelp_eater
             }
 
 
-            transform.position = endPosition; //Asegurarse de que la posición final sea exactamente correcta
+            transform.position = endPosition; 
             currentZoneIndex = targetIndex;
             isAtInitialPosition = true;
             isAnimating = false;
@@ -113,7 +113,7 @@ namespace kelp_eater
                 currentZoneIndex--;
             }
 
-            SoundManager.PlaySpecificSound(SoundType.PLAYER_MOVE, 0, 1f);
+            //SoundManager.PlaySpecificSound(SoundType.PLAYER_MOVE, 0, 1f);
             Vector3 newPosition = zoneObjects[currentZoneIndex].transform.position;
             newPosition.z = transform.position.z;
             transform.position = newPosition;
