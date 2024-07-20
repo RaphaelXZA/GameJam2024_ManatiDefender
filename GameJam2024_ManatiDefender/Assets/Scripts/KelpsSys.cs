@@ -1,12 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KelpsSys : MonoBehaviour
 {
+    [SerializeField] Button eatButton;
     [SerializeField] private kelp_eater.PlayerMove player;
     [SerializeField] private GameObject[] kelpArray;
-    Touch touch;
+    [SerializeField] private float yIncreaseAmount = 1f;
+    [SerializeField] private float timer;
+    [SerializeField] private float maxTimer = 2f;
+
+    private void Awake()
+    {
+        eatButton.onClick.AddListener(KelpDown);
+
+    }
+
     void Start()
     {
         player = GameObject.Find("PlayerManatee").GetComponent<kelp_eater.PlayerMove>();
@@ -20,36 +30,67 @@ public class KelpsSys : MonoBehaviour
         
     }
 
-    void Update()
+
+    private void Update()
     {
-        //Corregir Input correcto a tap tap en la pantalla xd
-        if (Input.GetKeyDown(KeyCode.E))
+        timer += Time.deltaTime;
+
+        if (timer >= maxTimer)
         {
-            switch (player.currentZoneIndex)
-            {
-                case 0:
-                    kelpArray[0].transform.position -= new Vector3(0, 1f, 0);
-                    break;
+            UpKelp();
+            timer = 0;
+        }
+        
+    }
 
-                case 1:
-                    kelpArray[1].transform.position -= new Vector3(0, 1f, 0);
-                    break;
 
-                case 2:
-                    kelpArray[2].transform.position -= new Vector3(0, 1f, 0);
-                    break;
+    void UpKelp()
+    {
+        maxTimer = Random.Range(0.5f, 2f);
+        int randomIndex = Random.Range(0, kelpArray.Length);
+        GameObject randomKelp = kelpArray[randomIndex];
 
-                case 3:
-                    kelpArray[3].transform.position -= new Vector3(0, 1f, 0);
-                    break;
+        Debug.Log("Selected random kelp: " + randomKelp.name);
 
-                case 4:
-                    kelpArray[4].transform.position -= new Vector3(0, 1f, 0);
-                    break;
+        randomKelp.transform.position = new Vector3(
+            randomKelp.transform.position.x,
+            randomKelp.transform.position.y + yIncreaseAmount,
+            randomKelp.transform.position.z);
+    }
 
-                default:
-                    break;
-            }
+    public void KelpDown()
+    {
+        for (int i = 0; i < kelpArray.Length; i++)
+        {
+            kelpArray[i].transform.position = new Vector3(kelpArray[i].transform.position.x, Mathf.Clamp(kelpArray[i].transform.position.y, -14, 0), kelpArray[i].transform.position.z);
+        }
+
+        switch (player.currentZoneIndex)
+        {
+            case 0:
+                kelpArray[0].transform.position -= new Vector3(0, 1f, 0);
+                break;
+
+            case 1:
+                kelpArray[1].transform.position -= new Vector3(0, 1f, 0);
+                break;
+
+            case 2:
+                kelpArray[2].transform.position -= new Vector3(0, 1f, 0);
+                break;
+
+            case 3:
+                kelpArray[3].transform.position -= new Vector3(0, 1f, 0);
+                break;
+
+            case 4:
+                kelpArray[4].transform.position -= new Vector3(0, 1f, 0);
+                break;
+
+            default:
+                break;
         }
     }
+
+   
 }
