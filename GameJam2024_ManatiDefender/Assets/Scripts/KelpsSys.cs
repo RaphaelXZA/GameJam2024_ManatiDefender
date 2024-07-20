@@ -24,7 +24,7 @@ namespace kelp_eater
 
         void Start()
         {
-            player = GameObject.Find("PlayerManatee").GetComponent<kelp_eater.PlayerMove>();
+            player = GameObject.FindWithTag("Player").GetComponent<kelp_eater.PlayerMove>();
             scoreScript = GameObject.Find("ScoreManager").GetComponent<kelp_eater.ScoreCounter>();
 
             if (player == null)

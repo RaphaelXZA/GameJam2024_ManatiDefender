@@ -758,6 +758,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -839,6 +840,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a75bdfa2bc4c0489a18b9539585c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs:
+  - {fileID: 16529947}
+  - {fileID: 1324455282}
+  - {fileID: 1042990490}
+  - {fileID: 131444684}
+  - {fileID: 560854482}
+  squarePrefabs:
+  - {fileID: 797339995}
+  voids:
+  - {fileID: 788380151}
+  - {fileID: 1702100189}
+  - {fileID: 1037920439}
+  - {fileID: 554889530}
+  - {fileID: 1092701320}
+  numberOfObjects: 5
+  marginTop: 0.5
+  marginBottom: 0.5
 --- !u!1 &541512009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,6 +1252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manatee Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7057702692916173728, guid: d1ec665e0e2512c498adfb1f37d18568, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8158806051334734787, guid: d1ec665e0e2512c498adfb1f37d18568, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -1426,7 +1460,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.32, y: 5.61, z: 0}
-  m_LocalScale: {x: 23.44, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
