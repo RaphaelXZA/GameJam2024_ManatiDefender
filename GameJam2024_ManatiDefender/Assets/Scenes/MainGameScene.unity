@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 16529948}
   - component: {fileID: 16529951}
   - component: {fileID: 16529950}
+  - component: {fileID: 16529952}
   m_Layer: 0
   m_Name: Kelp
   m_TagString: Untagged
@@ -203,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 16529947}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.591595, y: -11, z: -3.1519942}
+  m_LocalPosition: {x: -14.591595, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 13.997101, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -281,6 +282,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &16529952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16529947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &17280655
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +339,7 @@ GameObject:
   - component: {fileID: 131444685}
   - component: {fileID: 131444688}
   - component: {fileID: 131444687}
+  - component: {fileID: 131444689}
   m_Layer: 0
   m_Name: Kelp (3)
   m_TagString: Untagged
@@ -394,7 +408,7 @@ Transform:
   m_GameObject: {fileID: 131444684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4415946, y: -11, z: -3.1519942}
+  m_LocalPosition: {x: -0.4415946, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 13.997101, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -472,6 +486,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &131444689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131444684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &225836383
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +547,7 @@ Transform:
   m_GameObject: {fileID: 225836383}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0505767, y: -1.8524902, z: 4.5479693}
+  m_LocalPosition: {x: 5.0505767, y: -1.8524902, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -985,6 +1011,7 @@ GameObject:
   - component: {fileID: 560854483}
   - component: {fileID: 560854486}
   - component: {fileID: 560854485}
+  - component: {fileID: 560854487}
   m_Layer: 0
   m_Name: Kelp (4)
   m_TagString: Untagged
@@ -1053,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 560854482}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.9784055, y: -11, z: -3.1519942}
+  m_LocalPosition: {x: 3.9784055, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 13.997101, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1131,6 +1158,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &560854487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560854482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &652203300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1250,7 @@ GameObject:
   - component: {fileID: 797339996}
   m_Layer: 0
   m_Name: Lose
-  m_TagString: Untagged
+  m_TagString: Lose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1371,6 +1410,7 @@ GameObject:
   - component: {fileID: 1042990491}
   - component: {fileID: 1042990494}
   - component: {fileID: 1042990493}
+  - component: {fileID: 1042990495}
   m_Layer: 0
   m_Name: Kelp (2)
   m_TagString: Untagged
@@ -1439,7 +1479,7 @@ Transform:
   m_GameObject: {fileID: 1042990490}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.055595, y: -11, z: -3.1519942}
+  m_LocalPosition: {x: -5.055595, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 13.997101, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1517,6 +1557,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1042990495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042990490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1092701320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1680,7 @@ GameObject:
   - component: {fileID: 1324455283}
   - component: {fileID: 1324455286}
   - component: {fileID: 1324455285}
+  - component: {fileID: 1324455287}
   m_Layer: 0
   m_Name: Kelp (1)
   m_TagString: Untagged
@@ -1696,7 +1749,7 @@ Transform:
   m_GameObject: {fileID: 1324455282}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.061595, y: -11, z: -3.1519942}
+  m_LocalPosition: {x: -10.061595, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 13.997101, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1774,6 +1827,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1324455287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324455282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1496586877
 GameObject:
   m_ObjectHideFlags: 0
