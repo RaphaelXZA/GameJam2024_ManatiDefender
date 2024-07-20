@@ -1,21 +1,37 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    // Referencias a los GameObjects de las zonas
+    //VARIABLES de las zonas a las que el jugador puede moverse
     public GameObject[] zoneObjects;
-    private int currentZoneIndex = 2;  // Empezamos en la zona central (Zona 3)
+    private int currentZoneIndex;
 
-    // Sensibilidad del deslizamiento
-    public float swipeThreshold = 10f;
+    public float swipeThreshold = 10f; //Sensibilidad del deslizamiento
 
-    // Variables para el manejo del deslizamiento
+    //VARIABLES para el comportamiento del deslizamiento
     private Vector2 startTouchPosition;
     private bool hasMoved = false;
 
+    //VARIABLES de la secuencia inicial
+    public int initialPositionIndex;  //Puedes elegir la posición inicial desde el Inspector
+    public float moveDuration = 1.0f;  //Duración de la animación de movimiento
+    private bool isAnimating = true;  //Booleano que indica si estamos animando
+
+    //Bool que indica si el jugador ha llegado a la posición inicial y puede empezar el juego
+    public bool isAtInitialPosition = false;
+
+    void Start()
+    {
+        //Mueve al jugador a la posición inicial al comenzar el juego
+        StartCoroutine(MoveToPosition(initialPositionIndex));
+    }
+
     void Update()
     {
-        // Verifica la entrada táctil
+        //Si esta en la secuencia, no puede deslizar
+        if (isAnimating) return;
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -28,26 +44,56 @@ public class PlayerController : MonoBehaviour
                     break;
 
                 case TouchPhase.Moved:
-                    if (!hasMoved) // Asegura que solo procesamos el primer movimiento significativo
+                    if (!hasMoved)
                     {
                         Vector2 touchDeltaPosition = touch.position - startTouchPosition;
 
-                        if (Mathf.Abs(touchDeltaPosition.x) > swipeThreshold) // Verifica si el deslizamiento es suficiente
+                        if (Mathf.Abs(touchDeltaPosition.x) > swipeThreshold) //Verifica si el deslizamiento es suficiente
                         {
-                            if (touchDeltaPosition.x > 0) // Desliza hacia la derecha
+                            if (touchDeltaPosition.x > 0) //Derecha
                             {
                                 MoveToNextZone(true);
                             }
-                            else if (touchDeltaPosition.x < 0) // Desliza hacia la izquierda
+                            else if (touchDeltaPosition.x < 0) //Izquierda
                             {
                                 MoveToNextZone(false);
                             }
-                            hasMoved = true; // Marca que hemos procesado el movimiento
+                            hasMoved = true;
                         }
                     }
                     break;
             }
         }
+    }
+
+    IEnumerator MoveToPosition(int targetIndex)
+    {
+        if (targetIndex < 0 || targetIndex >= zoneObjects.Length)
+        {
+            Debug.LogError("Posicion inicial invalida");
+            yield break;
+        } 
+
+        
+        isAnimating = true; //Desactiva deslizamientos durante la secuencia
+
+        Vector3 startPosition = transform.position;
+        Vector3 endPosition = zoneObjects[targetIndex].transform.position;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < moveDuration)
+        {
+            transform.position = Vector3.Lerp(startPosition, endPosition, (elapsedTime / moveDuration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        
+        transform.position = endPosition; //Asegurarse de que la posición final sea exactamente correcta
+        currentZoneIndex = targetIndex;
+        isAtInitialPosition = true;
+        isAnimating = false;
     }
 
     void MoveToNextZone(bool moveRight)
@@ -61,9 +107,9 @@ public class PlayerController : MonoBehaviour
             currentZoneIndex--;
         }
 
-        // Mueve al jugador a la nueva posición en el eje X
+
         Vector3 newPosition = zoneObjects[currentZoneIndex].transform.position;
-        newPosition.z = transform.position.z; // Mantén la posición en el eje Z
+        newPosition.z = transform.position.z; 
         transform.position = newPosition;
     }
 }
