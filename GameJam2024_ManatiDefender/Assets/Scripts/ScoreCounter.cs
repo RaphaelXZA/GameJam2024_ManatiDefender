@@ -8,12 +8,16 @@ namespace kelp_eater
         [SerializeField] private TextMeshProUGUI scoreText;  
 
         private float elapsedTime; 
-        private int score;        
+        public int score;        
         private const int pointsPerMinute = 45;
+
+        KelpsSys kelpSystemScript;
+        private bool hasDecreasedTimer;
 
         void Start()
         {
-            
+            kelpSystemScript = GameObject.Find("KelpSystem").GetComponent<kelp_eater.KelpsSys>();
+
             if (scoreText == null)
             {
                 Debug.LogError("El objeto de texto no esta asignado.");
@@ -36,6 +40,17 @@ namespace kelp_eater
             {
                 score = newScore;
                 UpdateScoreText();
+            }
+
+            //Aumenta la velocidad de las algas cuando el puntaje llega a un multiplo de 10.
+            if (score % 10 == 0 && score > 0 && hasDecreasedTimer == false)
+            {
+                kelpSystemScript.DecreaseTimerRange();
+                hasDecreasedTimer = true;
+            }
+            else if (score % 10 != 0)
+            {
+                hasDecreasedTimer = false;
             }
         }
 
