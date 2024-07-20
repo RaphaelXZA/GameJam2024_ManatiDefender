@@ -26,7 +26,7 @@ namespace kelp_eater
         void Start()
         {
             //Mueve al jugador a la posición inicial al comenzar el juego
-            StartCoroutine(MoveToPosition(initialPositionIndex));
+            StartCoroutine(MoveToStartPosition(initialPositionIndex));
         }
 
         void Update()
@@ -68,7 +68,7 @@ namespace kelp_eater
             }
         }
 
-        IEnumerator MoveToPosition(int targetIndex)
+        IEnumerator MoveToStartPosition(int targetIndex)
         {
             if (targetIndex < 0 || targetIndex >= zoneObjects.Length)
             {
@@ -100,16 +100,20 @@ namespace kelp_eater
 
         void MoveToNextZone(bool moveRight)
         {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
             if (moveRight && currentZoneIndex < zoneObjects.Length - 1)
             {
+                spriteRenderer.flipX = true;
                 currentZoneIndex++;
             }
             else if (!moveRight && currentZoneIndex > 0)
             {
+                spriteRenderer.flipX = false;
                 currentZoneIndex--;
             }
 
-
+            SoundManager.PlaySpecificSound(SoundType.PLAYER_MOVE, 0, 1f);
             Vector3 newPosition = zoneObjects[currentZoneIndex].transform.position;
             newPosition.z = transform.position.z;
             transform.position = newPosition;
