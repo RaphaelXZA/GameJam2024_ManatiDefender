@@ -87,6 +87,7 @@ namespace kelp_eater
             while (elapsedTime < moveDuration)
             {
                 transform.position = Vector3.Lerp(startPosition, endPosition, (elapsedTime / moveDuration));
+                transform.position = new Vector3(transform.position.x, transform.position.y, 0);
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
@@ -100,15 +101,18 @@ namespace kelp_eater
 
         void MoveToNextZone(bool moveRight)
         {
-            //SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-
+            Transform player = GetComponent<Transform>();   
+            Vector3 vector3 = player.localScale;
+            Debug.Log(vector3);
             if (moveRight && currentZoneIndex < zoneObjects.Length - 1)
             {
+                player.localScale = new Vector3(-1, vector3.y, vector3.z);
                 //spriteRenderer.flipX = true;
                 currentZoneIndex++;
             }
             else if (!moveRight && currentZoneIndex > 0)
             {
+                player.localScale = new Vector3(1, 1, 1);
                 //spriteRenderer.flipX = false;
                 currentZoneIndex--;
             }
