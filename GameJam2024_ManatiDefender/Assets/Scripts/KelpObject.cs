@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace kelp_eater
-{
+{    
+
     public class KelpObject : MonoBehaviour
     {
         private void OnCollisionEnter2D(Collision2D collision)

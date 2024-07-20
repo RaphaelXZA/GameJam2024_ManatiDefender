@@ -100,12 +100,16 @@ namespace kelp_eater
 
         void MoveToNextZone(bool moveRight)
         {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
             if (moveRight && currentZoneIndex < zoneObjects.Length - 1)
             {
+                spriteRenderer.flipX = true;
                 currentZoneIndex++;
             }
             else if (!moveRight && currentZoneIndex > 0)
             {
+                spriteRenderer.flipX = false;
                 currentZoneIndex--;
             }
 

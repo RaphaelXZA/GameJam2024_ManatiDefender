@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d048a56350cc4499cb9ca108ca256e8c
+guid: ac69bff82172b46db96f3c873b74814d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 112
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo-6_0"
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo-4_0"
       rect:
         serializedVersion: 2
         x: 72
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa1088e0d1bf14ae395d2b2ffd237d26
-      internalID: 173853951
+      spriteID: 219728fce674a434f83a9b11de1831df
+      internalID: -412447086
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "Ilustracio\u0301n_sin_ti\u0301tulo-6_0": 173853951
+      "Ilustracio\u0301n_sin_ti\u0301tulo-4_0": -412447086
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
