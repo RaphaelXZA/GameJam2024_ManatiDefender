@@ -241,7 +241,7 @@ MonoBehaviour:
   timerMinimunRange: 0.5
   timerMaximunRange: 1.5
   timerDecreaseAmount: 0.2
-  kelpParticle: {fileID: 0}
+  kelpParticle: {fileID: 2854499771929861959, guid: de4d1fe7ce32ae64ca6b9f0ff5e09ff9, type: 3}
   downAmount: 1
   eatInterval: 0.6
 --- !u!4 &225836385
