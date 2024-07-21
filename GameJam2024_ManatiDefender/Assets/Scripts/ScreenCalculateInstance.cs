@@ -52,7 +52,7 @@ namespace kelp_eater
             float squareWidth = screenWidthInWorldUnits - 2 * marginTop; 
             Vector3 squareScale = new Vector3(squareWidth, 1f, 1f); 
 
-            Vector3 squarePosition = new Vector3(0f, screenHeightInWorldUnits / 2 + 0.5f, 2.34f);
+            Vector3 squarePosition = new Vector3(0f, screenHeightInWorldUnits / 2 + 0.5f, 0.08999991f);
 
             if (squarePrefabs.Length > 0)
             {
