@@ -16,16 +16,18 @@ namespace kelp_eater
         private bool hasMoved = false;
 
         //VARIABLES de la secuencia inicial
-        public int initialPositionIndex;  //Puedes elegir la posición inicial desde el Inspector
-        public float moveDuration = 1.0f;  //Duración de la animación de movimiento
+        public int initialPositionIndex;  //Puedes elegir la posiciï¿½n inicial desde el Inspector
+        public float moveDuration = 1.0f;  //Duraciï¿½n de la animaciï¿½n de movimiento
         private bool isAnimating = true;  //Booleano que indica si estamos animando
 
-        //Bool que indica si el jugador ha llegado a la posición inicial y puede empezar el juego
+        //Bool que indica si el jugador ha llegado a la posiciï¿½n inicial y puede empezar el juego
         public bool isAtInitialPosition = false;
+
+        [SerializeField] private GameObject BubbleParticle;
 
         void Start()
         {
-            //Mueve al jugador a la posición inicial al comenzar el juego
+            //Mueve al jugador a la posiciï¿½n inicial al comenzar el juego
             StartCoroutine(MoveToStartPosition(initialPositionIndex));
         }
 
@@ -106,12 +108,14 @@ namespace kelp_eater
             Debug.Log(vector3);
             if (moveRight && currentZoneIndex < zoneObjects.Length - 1)
             {
+                Instantiate(BubbleParticle, transform.position + Vector3.up, Quaternion.identity);
                 player.localScale = new Vector3(-1, vector3.y, vector3.z);
                 //spriteRenderer.flipX = true;
                 currentZoneIndex++;
             }
             else if (!moveRight && currentZoneIndex > 0)
             {
+                Instantiate(BubbleParticle, transform.position + Vector3.up, Quaternion.identity);
                 player.localScale = new Vector3(1, 1, 1);
                 //spriteRenderer.flipX = false;
                 currentZoneIndex--;

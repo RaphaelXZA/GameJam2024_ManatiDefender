@@ -5857,6 +5857,7 @@ MonoBehaviour:
   initialPositionIndex: 2
   moveDuration: 1
   isAtInitialPosition: 0
+  BubbleParticle: {fileID: 7962805963904003295, guid: 6f898ef53c59c794e9187b458344c1bb, type: 3}
 --- !u!4 &1885413369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8158806051334734787, guid: d1ec665e0e2512c498adfb1f37d18568, type: 3}
