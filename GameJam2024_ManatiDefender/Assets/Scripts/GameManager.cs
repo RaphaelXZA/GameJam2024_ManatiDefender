@@ -22,11 +22,10 @@ namespace kelp_eater
             }
         }
 
-        public void GameOverAndContinue()
+        public void GameOverAndContinue() //Metodo que pausa el juego para colocar el panel de Game Over
         {
             isPaused = !isPaused; //Invierte el estado de pausa
 
-            //Activa o desactiva el panel de pausa seg�n el estado de pausa
             if (isPaused)
             {
                 Time.timeScale = 0f; //Pausa el tiempo en el juego
@@ -47,7 +46,8 @@ namespace kelp_eater
             }
         }
 
-        public void VerVideo()
+        //METODOS DE BOTONES QUE APARECEN EN EL PANEL DE GAME OVER
+        public void VerVideo() //Boton para ver un video para obtener una vida extra.
         {
             videoPanel.SetActive(true);
             pausePanel.SetActive(false);
@@ -56,7 +56,7 @@ namespace kelp_eater
 
         }
 
-        public void Reiniciar()
+        public void Reiniciar() //Boton para reiniciar la partida.
         {
             ScoreCounter scoreCounter = FindAnyObjectByType<ScoreCounter>();
             ScreenCalculateInstance screenCalculateInstance = Camera.main.GetComponent<ScreenCalculateInstance>();
@@ -74,7 +74,7 @@ namespace kelp_eater
             
         }
 
-        public void VideoEnd()
+        public void VideoEnd() //Boton que aparece luego de ver el video, para continuar la partida.
         {
             Time.timeScale = 1f;
             SoundManager.PlayMusic(0);

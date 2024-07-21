@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7079640259031577534}
   - component: {fileID: 3301189452559467399}
   - component: {fileID: 957607919864702208}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Kelp1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4899,7 +4899,7 @@ GameObject:
   - component: {fileID: 2611417019378355933}
   - component: {fileID: 1229496844247695918}
   - component: {fileID: 6180018896836229170}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Kelp3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9821,7 +9821,7 @@ GameObject:
   - component: {fileID: 3344244338538143401}
   - component: {fileID: 8270238998232447246}
   - component: {fileID: 5084665702586125033}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Kelp2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
