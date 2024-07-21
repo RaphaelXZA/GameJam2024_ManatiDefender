@@ -1,0 +1,13 @@
+El script usado es el llamado "GameManager", que se encuentra en la carpeta de assets "Scripts" y en la escena esta dentro del GameObject "GameController".
+
+Dentro de ese script hay 4 metodos importantes para el proceso de reiniciar o continuar la partida.
+
+1- El metodo "GameOverAndContinue" es el que inicia todo, cuando se llama (actualmente se hace desde "KelpObject", el script puesto en el GameObject que indica el limite de hasta donde pueden llegar las algas) se pausa el juego y aparece 'la pantalla de Game Over': un panel con un boton para ver un video y un boton de reiniciar.
+
+Los demás son los metodos de los botones.
+
+2- El metodo "VerVideo" corresponde al boton del mismo nombre de la pantalla de Game Over, al ejecutarse muestra el panel donde iria el video con publicidad junto con el boton para continuar partida.
+
+3- El metodo "Reiniciar" corresponde al boton del mismo nombre dentro de la pantalla de Game Over, al ejecutarse reanuda el juego reiniciando los valores como la puntuacion, la posicion del jugador y la posicion de las algas, haciendo que el jugador inicie una nueva partida.
+
+4- El metodo "VideoEnd" corresponde al boton del panel del video de publicidad, al ejecutarse reanuda la partida, reinicia la posicion de las algas y el jugador PERO mantiene los valores como la puntuación, para que el jugador continue desde donde perdió.
