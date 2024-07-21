@@ -167,6 +167,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 124a73d2bd96bda4a93872261b1d2527, type: 3}
   m_PrefabInstance: {fileID: 747285913}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &69383357 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5989827507887959374, guid: b74e057f0ed341640bc965393bdfd316, type: 3}
+  m_PrefabInstance: {fileID: 304133695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &92308526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,9 +1081,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectRenderer: {fileID: 0}
-  saturationChange: 0.5
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  originalMaterial: {fileID: 0}
+  redMaterial: {fileID: 2100000, guid: 4042e133e7fe3624b868373aa3d3ed1e, type: 2}
+  objectRenderer: {fileID: 1205702789}
 --- !u!95 &242824349
 Animator:
   serializedVersion: 5
@@ -1372,9 +1377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectRenderer: {fileID: 0}
-  saturationChange: 0.5
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  originalMaterial: {fileID: 0}
+  redMaterial: {fileID: 2100000, guid: 4042e133e7fe3624b868373aa3d3ed1e, type: 2}
+  objectRenderer: {fileID: 69383357}
 --- !u!95 &301716214
 Animator:
   serializedVersion: 5
@@ -1755,9 +1760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectRenderer: {fileID: 0}
-  saturationChange: 0.5
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  originalMaterial: {fileID: 0}
+  redMaterial: {fileID: 2100000, guid: 4042e133e7fe3624b868373aa3d3ed1e, type: 2}
+  objectRenderer: {fileID: 1196523216}
 --- !u!95 &402794255
 Animator:
   serializedVersion: 5
@@ -4813,9 +4818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalMaterial: {fileID: 0}
+  redMaterial: {fileID: 2100000, guid: 4042e133e7fe3624b868373aa3d3ed1e, type: 2}
   objectRenderer: {fileID: 1622859132}
-  saturationChange: 0.5
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &1154924143
 Animator:
   serializedVersion: 5
@@ -4979,6 +4984,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 733af166958e54e45b1e257e8aecc263, type: 3}
+--- !u!137 &1196523216 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5989827507887959374, guid: b74e057f0ed341640bc965393bdfd316, type: 3}
+  m_PrefabInstance: {fileID: 435317578}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1205702789 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5989827507887959374, guid: b74e057f0ed341640bc965393bdfd316, type: 3}
+  m_PrefabInstance: {fileID: 413955632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214730307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5324,9 +5339,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectRenderer: {fileID: 0}
-  saturationChange: 0.5
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  originalMaterial: {fileID: 0}
+  redMaterial: {fileID: 2100000, guid: 4042e133e7fe3624b868373aa3d3ed1e, type: 2}
+  objectRenderer: {fileID: 1743998739}
 --- !u!95 &1346230428
 Animator:
   serializedVersion: 5
@@ -7238,6 +7253,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 92e009b6726e7f840a66f78147ac622f, type: 3}
   m_PrefabInstance: {fileID: 1795508845}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &1743998739 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5989827507887959374, guid: b74e057f0ed341640bc965393bdfd316, type: 3}
+  m_PrefabInstance: {fileID: 472743617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1756013287
 GameObject:
   m_ObjectHideFlags: 0
@@ -8116,6 +8136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameplayObject: {fileID: 1792045412}
+  onTuto: 0
 --- !u!4 &2024013228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6601818077083223799, guid: cbb235d038383cc438d90346e5adbf49, type: 3}
