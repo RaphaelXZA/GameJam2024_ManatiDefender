@@ -4,43 +4,47 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace kelp_eater
-{    
+{
 
     public class KelpObject : MonoBehaviour
     {
         GameManager gameManagerScript;
-
-        [SerializeField] Material kelpMaterials;
+        TutorialHandler tutorialHandler;
+        [SerializeField] Material  originalMaterial;
+        [SerializeField] Material redMaterial;
+        [SerializeField] SkinnedMeshRenderer objectRenderer;
 
         private void Start()
         {
-            kelpMaterials = GetComponent<Material>();
+            tutorialHandler = FindAnyObjectByType<TutorialHandler>();
+            objectRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+            
+            originalMaterial = objectRenderer.material;
+
             gameManagerScript = GameObject.Find("GameController").GetComponent<GameManager>();
         }
-      
+
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("Lose"))
             {
                 Debug.Log("Colisiono con la zona de perdida");
                 gameManagerScript.GameOverAndContinue();
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-            
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Behavior"))
             {
-
+                objectRenderer.material = redMaterial;
             }
         }
 
-        private void OnCollisionExit(Collision collision)
+        private void OnTriggerExit(Collider other)
         {
-            
+            objectRenderer.material = originalMaterial;
         }
-
     }
+
 }

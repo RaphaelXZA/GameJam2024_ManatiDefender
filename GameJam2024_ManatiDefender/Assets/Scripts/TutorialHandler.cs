@@ -7,6 +7,7 @@ namespace kelp_eater
     public class TutorialHandler : MonoBehaviour
     {
         public GameObject GameplayObject;  // Objeto que se activará
+        public bool onTuto;
 
         void Awake()
         {
@@ -23,7 +24,7 @@ namespace kelp_eater
             // Detectar un toque en la pantalla
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                
+                onTuto = false;
                 GameplayObject.SetActive(true);
                 Destroy(this.gameObject);
             }

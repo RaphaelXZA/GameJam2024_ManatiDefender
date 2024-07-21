@@ -982,7 +982,7 @@ MonoBehaviour:
   - {fileID: 1346230423}
   - {fileID: 242824344}
   - {fileID: 402794250}
-  yIncreaseAmount: 1.5
+  yIncreaseAmount: 2.2
   timer: 0
   maxTimer: 1
   timerMinimunRange: 0.5
@@ -1076,7 +1076,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kelpMaterials: {fileID: 0}
+  objectRenderer: {fileID: 0}
+  saturationChange: 0.5
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &242824349
 Animator:
   serializedVersion: 5
@@ -1370,7 +1372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kelpMaterials: {fileID: 0}
+  objectRenderer: {fileID: 0}
+  saturationChange: 0.5
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &301716214
 Animator:
   serializedVersion: 5
@@ -1751,7 +1755,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kelpMaterials: {fileID: 0}
+  objectRenderer: {fileID: 0}
+  saturationChange: 0.5
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &402794255
 Animator:
   serializedVersion: 5
@@ -4807,7 +4813,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kelpMaterials: {fileID: 0}
+  objectRenderer: {fileID: 1622859132}
+  saturationChange: 0.5
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &1154924143
 Animator:
   serializedVersion: 5
@@ -5316,7 +5324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571c7f62ab3ae0448080a1a21e9fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kelpMaterials: {fileID: 0}
+  objectRenderer: {fileID: 0}
+  saturationChange: 0.5
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &1346230428
 Animator:
   serializedVersion: 5
@@ -6847,6 +6857,11 @@ RectTransform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 124a73d2bd96bda4a93872261b1d2527, type: 3}
   m_PrefabInstance: {fileID: 1769243002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1622859132 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5989827507887959374, guid: b74e057f0ed341640bc965393bdfd316, type: 3}
+  m_PrefabInstance: {fileID: 1765244050}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1639485317
 PrefabInstance:
