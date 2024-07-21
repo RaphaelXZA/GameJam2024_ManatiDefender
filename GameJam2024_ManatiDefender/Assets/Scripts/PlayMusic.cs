@@ -35,6 +35,8 @@ namespace kelp_eater
                 PlaySceneMainMusicWithRetardedTime();
             }
 
+            SoundManager.PlayAmbient(0);
+
         }
 
         public void PlaySceneMainMusic()

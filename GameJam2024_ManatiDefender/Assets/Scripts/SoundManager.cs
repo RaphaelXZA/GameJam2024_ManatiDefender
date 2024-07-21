@@ -21,6 +21,10 @@ namespace kelp_eater
         [SerializeField] private AudioSource soundAudioSource;
         [SerializeField] private List<SoundList> soundList;
 
+        [Header("----------------------Ambient Settings----------------------")]
+        [SerializeField] private AudioSource ambientAudioSource;
+        [SerializeField] private TrackClass[] ambientList;
+
         private static SoundManager instance;
 
         private void Awake()
@@ -113,6 +117,15 @@ namespace kelp_eater
         public static void UnpauseMusic()
         {
             instance.musicAudioSource.UnPause();
+        }
+
+        //AMBIENT
+        public static void PlayAmbient(int trackNum) //Reproduce sonidos ambientales en loop. 
+        {
+            Debug.Log("Sonidos ambientales reproducidos");
+            instance.ambientAudioSource.clip = instance.ambientList[trackNum].clip;
+            instance.ambientAudioSource.loop = true;
+            instance.ambientAudioSource.Play();
         }
 
 
