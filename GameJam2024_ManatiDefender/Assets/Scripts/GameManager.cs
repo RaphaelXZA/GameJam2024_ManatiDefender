@@ -10,9 +10,12 @@ namespace kelp_eater
         public GameObject videoPanel;
         public GameObject pausePanel; //Referencia al panel de pausa en el Canvas
         public bool isPaused = false; //Variable para controlar el estado de pausa
+        private MonoBehaviour playerMoveScript;
 
         void Start()
         {
+            playerMoveScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>();
+            
             if (pausePanel != null)
             {
                 pausePanel.SetActive(false);
@@ -23,10 +26,12 @@ namespace kelp_eater
         {
             isPaused = !isPaused; //Invierte el estado de pausa
 
-            //Activa o desactiva el panel de pausa según el estado de pausa
+            //Activa o desactiva el panel de pausa segï¿½n el estado de pausa
             if (isPaused)
             {
                 Time.timeScale = 0f; //Pausa el tiempo en el juego
+                SoundManager.StopMusic();
+                playerMoveScript.enabled = false;
                 if (pausePanel != null)
                 {
                     pausePanel.SetActive(true);
@@ -63,6 +68,8 @@ namespace kelp_eater
             playerMove.transform.position = Vector3.up;
             screenCalculateInstance.ArrangeObjects();
             Time.timeScale = 1f;
+            SoundManager.PlayMusic(0);
+            playerMoveScript.enabled = true;
             pausePanel.SetActive(false);
             
         }
@@ -70,6 +77,8 @@ namespace kelp_eater
         public void VideoEnd()
         {
             Time.timeScale = 1f;
+            SoundManager.PlayMusic(0);
+            playerMoveScript.enabled = true;
             isPaused = false;
             videoPanel.SetActive(false);    
         }

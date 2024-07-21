@@ -18,6 +18,8 @@ namespace kelp_eater
         [SerializeField] private float timerMaximunRange;
         [SerializeField] private float timerDecreaseAmount;
 
+        [SerializeField] private GameObject kelpParticle;
+
         public float downAmount = 1;
 
         public float eatInterval = 0.6f; 
@@ -80,6 +82,7 @@ namespace kelp_eater
 
         IEnumerator KelpDown()
         {
+            PlayerMove playerMove = GameObject.FindWithTag("Player").GetComponent<PlayerMove>();
             while(true)
             {
                 for (int i = 0; i < kelpArray.Length; i++)
@@ -90,22 +93,27 @@ namespace kelp_eater
                 switch (player.currentZoneIndex)
                 {
                     case 0:
+                        Instantiate(kelpParticle, playerMove.transform.position+Vector3.up,Quaternion.identity);
                         kelpArray[0].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
                     case 1:
+                        Instantiate(kelpParticle, playerMove.transform.position + Vector3.up, Quaternion.identity);
                         kelpArray[1].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
                     case 2:
+                        Instantiate(kelpParticle, playerMove.transform.position + Vector3.up, Quaternion.identity);
                         kelpArray[2].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
                     case 3:
+                        Instantiate(kelpParticle, playerMove.transform.position + Vector3.up, Quaternion.identity);
                         kelpArray[3].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
                     case 4:
+                        Instantiate(kelpParticle, playerMove.transform.position + Vector3.up, Quaternion.identity);
                         kelpArray[4].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
