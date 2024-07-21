@@ -17,11 +17,7 @@ namespace kelp_eater
             kelpMaterials = GetComponent<Material>();
             gameManagerScript = GameObject.Find("GameController").GetComponent<GameManager>();
         }
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            
-        }
-
+      
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("Lose"))
@@ -30,9 +26,14 @@ namespace kelp_eater
                 gameManagerScript.GameOverAndContinue();
                 //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-            else if (collision.gameObject.CompareTag("Behavior"))
+            
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Behavior"))
             {
-                 
+
             }
         }
 

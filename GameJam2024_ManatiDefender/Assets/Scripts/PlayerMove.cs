@@ -119,7 +119,7 @@ namespace kelp_eater
                 currentZoneIndex--;
             }
 
-            //SoundManager.PlaySpecificSound(SoundType.PLAYER_MOVE, 0, 1f);
+            SoundManager.PlaySpecificSound(SoundType.PLAYER_MOVE, 0, 1f);
             Vector3 newPosition = zoneObjects[currentZoneIndex].transform.position;
             newPosition.z = transform.position.z;
             transform.position = newPosition;

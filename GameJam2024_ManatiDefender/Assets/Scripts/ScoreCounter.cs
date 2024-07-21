@@ -44,9 +44,9 @@ namespace kelp_eater
             }
 
             //Aumenta la velocidad de las algas cuando el puntaje llega a un multiplo de 10.
-            if (score % 20 == 0 && score > 0 && hasDecreasedTimer == false)
+            if (score > 0 && score % 20 == 0 && !hasDecreasedTimer)
             {
-                kelpSystemScript.eatInterval -= moreEatSpeed;
+                kelpSystemScript.eatInterval = Mathf.Max(0.1f, kelpSystemScript.eatInterval - moreEatSpeed);
                 kelpSystemScript.DecreaseTimerRange();
                 hasDecreasedTimer = true;
             }

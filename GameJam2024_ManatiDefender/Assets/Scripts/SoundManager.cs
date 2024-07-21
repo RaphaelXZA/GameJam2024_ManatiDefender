@@ -44,7 +44,7 @@ namespace kelp_eater
             }
         }
 
-        public static void PlaySpecificSound(SoundType sound, int clipIndex, float volume = 1) //Para reproducir un sonido especifico dentro de una categoria.
+        public static void PlaySpecificSound(SoundType sound, int clipIndex, float volume) //Para reproducir un sonido especifico dentro de una categoria.
         {
             SoundList soundList = instance.soundList.Find(s => s.soundType == sound);
             if (soundList != null)

@@ -2648,6 +2648,7 @@ MonoBehaviour:
   - soundType: 0
     sounds:
     - {fileID: 8300000, guid: d5fe05040a0e3b14aa1f4df068bde27d, type: 3}
+    - {fileID: 8300000, guid: 9641d39ed0e4b7746b0cd28796a6b462, type: 3}
   - soundType: 1
     sounds:
     - {fileID: 8300000, guid: 101b6fe80f7e7d24cb959e08a7b3988f, type: 3}
@@ -6995,7 +6996,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
