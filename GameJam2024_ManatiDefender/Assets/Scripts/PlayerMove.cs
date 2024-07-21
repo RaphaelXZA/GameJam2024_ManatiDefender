@@ -110,14 +110,12 @@ namespace kelp_eater
             {
                 Instantiate(BubbleParticle, transform.position + Vector3.up, Quaternion.identity);
                 player.localScale = new Vector3(-1, vector3.y, vector3.z);
-                //spriteRenderer.flipX = true;
                 currentZoneIndex++;
             }
             else if (!moveRight && currentZoneIndex > 0)
             {
                 Instantiate(BubbleParticle, transform.position + Vector3.up, Quaternion.identity);
                 player.localScale = new Vector3(1, 1, 1);
-                //spriteRenderer.flipX = false;
                 currentZoneIndex--;
             }
 

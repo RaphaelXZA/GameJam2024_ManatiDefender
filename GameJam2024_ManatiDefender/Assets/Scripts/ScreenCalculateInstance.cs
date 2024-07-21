@@ -8,6 +8,7 @@ namespace kelp_eater
     {
         public GameObject[] objectPrefabs; // Prefabricado del objeto que quieres instanciar
         public GameObject[] squarePrefabs; // Prefabricado del cuadrado que quieres instanciar en la parte superior
+        public GameObject behavior;
         public GameObject[] voids;
         public GameObject[] rocks;
 
@@ -59,6 +60,8 @@ namespace kelp_eater
                 GameObject squareToArrange = squarePrefabs[0];
                 squareToArrange.transform.position = squarePosition;
                 squareToArrange.transform.localScale = squareScale;
+                behavior.transform.position = squarePosition - (Vector3.up*2);
+                behavior.transform.localScale = squareScale;
             }
         }
 
