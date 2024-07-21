@@ -77,7 +77,7 @@ namespace kelp_eater
             for (int i = 0; i < numberOfObjects && i < voids.Length; i++)
             {
                 float posX = startX + i * spaceBetweenObjects;
-                Vector3 spawnPosition = new Vector3(posX, screenBottom + 3.2f, 0); 
+                Vector3 spawnPosition = new Vector3(posX, screenBottom + 1.2f, 0); 
 
                 GameObject objectToArrange = voids[i];
 
