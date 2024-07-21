@@ -23,7 +23,7 @@ namespace kelp_eater
             ArrangeBottomRocks();
         }
 
-        void ArrangeObjects()
+        public void ArrangeObjects()
         {
             float screenHeightInWorldUnits = Camera.main.orthographicSize * 2;
             float screenWidthInWorldUnits = screenHeightInWorldUnits * Camera.main.aspect;
@@ -36,7 +36,7 @@ namespace kelp_eater
             for (int i = 0; i < numberOfObjects && i < objectPrefabs.Length; i++)
             {
                 float posX = startX + i * spaceBetweenObjects;
-                Vector3 spawnPosition = new Vector3(posX, -14, 2); 
+                Vector3 spawnPosition = new Vector3(posX, -13, 2); 
 
                 GameObject objectToArrange = objectPrefabs[i];
 
@@ -52,7 +52,7 @@ namespace kelp_eater
             float squareWidth = screenWidthInWorldUnits - 2 * marginTop; 
             Vector3 squareScale = new Vector3(squareWidth, 1f, 1f); 
 
-            Vector3 squarePosition = new Vector3(0f, screenHeightInWorldUnits / 2 + 0.5f, 0f);
+            Vector3 squarePosition = new Vector3(0f, screenHeightInWorldUnits / 2 + 0.5f, 2.34f);
 
             if (squarePrefabs.Length > 0)
             {

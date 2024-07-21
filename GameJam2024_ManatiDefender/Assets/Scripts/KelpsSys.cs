@@ -18,7 +18,9 @@ namespace kelp_eater
         [SerializeField] private float timerMaximunRange;
         [SerializeField] private float timerDecreaseAmount;
 
-        public float eatInterval = 0.6f; // Intervalo entre movimientos
+        public float downAmount = 1;
+
+        public float eatInterval = 0.6f; 
 
         ScoreCounter scoreScript;
 
@@ -78,33 +80,33 @@ namespace kelp_eater
 
         IEnumerator KelpDown()
         {
-            while (true)
+            while(true)
             {
                 for (int i = 0; i < kelpArray.Length; i++)
                 {
-                    kelpArray[i].transform.position = new Vector3(kelpArray[i].transform.position.x, Mathf.Clamp(kelpArray[i].transform.position.y, -14, 0), kelpArray[i].transform.position.z);
+                    kelpArray[i].transform.position = new Vector3(kelpArray[i].transform.position.x, Mathf.Clamp(kelpArray[i].transform.position.y, -13, -5), kelpArray[i].transform.position.z);
                 }
 
                 switch (player.currentZoneIndex)
                 {
                     case 0:
-                        kelpArray[0].transform.position -= new Vector3(0, 1f, 0);
+                        kelpArray[0].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
                     case 1:
-                        kelpArray[1].transform.position -= new Vector3(0, 1f, 0);
+                        kelpArray[1].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
                     case 2:
-                        kelpArray[2].transform.position -= new Vector3(0, 1f, 0);
+                        kelpArray[2].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
                     case 3:
-                        kelpArray[3].transform.position -= new Vector3(0, 1f, 0);
+                        kelpArray[3].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
                     case 4:
-                        kelpArray[4].transform.position -= new Vector3(0, 1f, 0);
+                        kelpArray[4].transform.position -= new Vector3(0, downAmount, 0);
                         break;
 
                     default:
@@ -119,6 +121,7 @@ namespace kelp_eater
         {
             timerMinimunRange -= timerDecreaseAmount;
             timerMaximunRange -= timerDecreaseAmount;
+            downAmount += 0.2f;
         }
 
     }

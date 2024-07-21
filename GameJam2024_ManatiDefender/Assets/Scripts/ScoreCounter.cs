@@ -7,8 +7,9 @@ namespace kelp_eater
     {
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private float moreEatSpeed;
-        private float elapsedTime; 
-        public int score;        
+        public float elapsedTime; 
+        public int score;
+        public int newScore;
         private const int pointsPerMinute = 45;
 
         KelpsSys kelpSystemScript;
@@ -34,7 +35,7 @@ namespace kelp_eater
 
             // Calcula el nuevo puntaje basado en el tiempo transcurrido
             // Puntos por segundo = puntos por minuto / 60
-            int newScore = Mathf.FloorToInt(elapsedTime / 60f * pointsPerMinute);
+            newScore = Mathf.FloorToInt(elapsedTime / 60f * pointsPerMinute);
 
             if (newScore != score)
             {
@@ -49,13 +50,13 @@ namespace kelp_eater
                 kelpSystemScript.DecreaseTimerRange();
                 hasDecreasedTimer = true;
             }
-            else if (score % 10 != 0)
+            else if (score % 20 != 0)
             {
                 hasDecreasedTimer = false;
             }
         }
 
-        private void UpdateScoreText()
+        public void UpdateScoreText()
         {
             if (scoreText != null)
             {
