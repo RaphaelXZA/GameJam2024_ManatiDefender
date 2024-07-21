@@ -24,6 +24,14 @@ namespace kelp_eater
             ArrangeBottomRocks();
         }
 
+        private void Update()
+        {
+            foreach (var obj in objectPrefabs)
+            {
+
+            }
+        }
+
         public void ArrangeObjects()
         {
             float screenHeightInWorldUnits = Camera.main.orthographicSize * 2;
